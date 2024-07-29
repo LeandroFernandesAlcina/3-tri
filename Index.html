@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<title>Hello World</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<script type="text/javascript")
-function draw(){
-var canvas = document.getElementById('meuCanvas');
-if (canvas.getContext){
-   var cntxt = canvas.getContext('2d');
-
-    cntxt.font ="30px Arial";
-   cntxt.fillText("Hello World",10,50);
-  }
-}
-</script>
+<meta charset="UTF-8">
+<title>Aprendendo FillText (jorge)</title>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+</style>
 </head>
-<body onload="draw();">
-<canvas id="meuCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
+<body>
+<canvas id="meuCanvas" width="800" height="400"></canvas>
+
+<script>
+    function draw(){
+    var canvas = document.getElementById('meuCanvas');
+    if (canvas.getContext) {
+        var cntxt = canvas.getContext('2d');
+
+        // textos filltext //
+        cntxt.font = "40px arial";
+        var textos = document.getElementById('meuTexto').value;
+        cntxt.fillStyle = "red";
+        cntxt.textAlign = "center";
+        cntxt.fillText(textos, canvas.width/2,canvas.height/2);
+    
+        }
+    }
+</script>
+  <input type="text" id="meuTexto" autofocus>
+  <button onclick="draw()">Novo Texto</button><br><>
+
 </body>
 </html>
