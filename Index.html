@@ -18,15 +18,16 @@
     if (canvas.getContext) {
         var cntxt = canvas.getContext('2d');
 
+        // Limpar o canvas antes de desenhar o novo texto
+        cntxt.clearRect(0, 0, canvas.width, canvas.height);
+
         // textos filltext //
         cntxt.font = "40px arial";
         var textos = document.getElementById('meuTexto').value;
         cntxt.fillStyle = "red";
         cntxt.textAlign = "center";
         cntxt.fillText(textos, canvas.width/2,canvas.height/2);
-        // Limpar o canvas antes de desenhar o novo texto
-        cntxt.clearRect(0, 0, canvas.width, canvas.height);
-
+        
         }
     }
 </script>
